@@ -7,6 +7,7 @@ Cada skill fica em `skills/<nome>/SKILL.md` e pode ser copiada direto para `.cla
 
 | Skill | Para que serve |
 |---|---|
+| `tpklog-padrao-base` | **Skill mestra**: padrão mínimo para todo projeto novo nascer no nível mais avançado, e registro dos aprendizados validados |
 | `tpklog-performance` | Auditoria de performance em 5 camadas (tela, rede, servidor, banco, infra) + observabilidade |
 | `tpklog-ux-motion` | Leis de UX e microinterações aplicadas às telas do TPKLOG |
 | `tpklog-kit-ia` | Avaliar e adotar com segurança ferramentas de IA de terceiros no fluxo de desenvolvimento |
@@ -34,6 +35,11 @@ As skills são **recomendações genéricas** até serem conferidas contra o có
 
 Depois ajusta o texto da skill instalada ao projeto real e traz uma lista priorizada. **Nenhuma alteração no código do app antes da aprovação.**
 
-## Regra do repositório
+## Ciclo de aprendizado
 
-Toda skill nova ou atualizada da fábrica é commitada aqui. Tema já coberto → atualizar a skill existente em vez de criar outra.
+1. A fábrica gera ou atualiza uma skill temática e commita aqui.
+2. O Claude Code puxa, avalia contra o código e aplica só o que for aprovado.
+3. O que foi aprovado e aplicado volta para cá: o terminal atualiza `tpklog-padrao-base`, registra em `CHANGELOG.md` e faz commit/push.
+4. Projeto novo começa pela `tpklog-padrao-base` e já nasce com tudo isso.
+
+Tema já coberto → atualizar a skill existente em vez de criar outra. Nada de segredos ou dados de cliente aqui.
