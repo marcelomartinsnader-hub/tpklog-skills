@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-23 (aprendizado validado no TPKLOG · v3620)
+- `tpklog-padrao-base`: 1º aprendizado validado — prazo em toda chamada de rede em uma peça só (front) + prazo por fetch no backend, com o prazo do cliente sempre maior que o do servidor nas operações fiscais; teste que varre o backend. Item 1 da avaliação de 23/11, aprovado pelo dono e publicado.
+- Avaliação completa das skills contra o TPKLOG real (arquivo:linha, 4 classificações) feita no projeto; as skills instaladas lá foram adaptadas à stack (JS puro + Firebase).
 ## 2026-11-23 (reel @matheusgomes DgBXEBeMEu7, transcrito)
 - Nova skill `tpklog-autopilot`: comando `/autopilot` com fluxo padronizado de 10 etapas; merge na main com aprovação por padrão.
 - `tpklog-harness-ia` aponta para o `/autopilot`.

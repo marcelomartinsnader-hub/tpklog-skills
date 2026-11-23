@@ -35,7 +35,7 @@ Percorra o "Padrão mínimo" e classifique cada item: **Já feito** (arquivo:lin
 - Toda lista paginada (cursor em tabelas grandes) e virtualizada quando longa.
 - Busca/autocomplete com debounce ~300 ms; sem chamadas duplicadas.
 - Sem N+1; índices nas consultas comuns; selecionar só as colunas necessárias.
-- Pool de conexões explícito; timeout (e retry com backoff quando idempotente) em toda API externa.
+- Timeout em toda chamada de rede, dos dois lados: no front, UMA peça (embrulho do fetch) dá prazo padrão a quem chega sem prazo; o prazo do cliente para operação fiscal/envio é sempre MAIOR que o do servidor. No backend, prazo explícito em cada chamada externa e um teste que reprova fetch sem prazo. Retry com backoff só quando idempotente. Pool de conexões explícito quando a stack tiver banco com conexões.
 - Tarefas lentas (SEFAZ, PDF, e-mail/WhatsApp, importações, rotas, webhooks) em fila de jobs.
 - Code splitting por rota; estáticos com hash + cache longo + Brotli/GZIP; fontes locais com `font-display: swap`; imagens WebP/AVIF com `loading="lazy"`.
 - Observabilidade desde o início: requisições lentas rastreadas, log de queries lentas, Web Vitals de usuários reais.
@@ -53,7 +53,7 @@ Percorra o "Padrão mínimo" e classifique cada item: **Já feito** (arquivo:lin
 
 Registro do que foi aplicado e aprovado em projeto real. Formato: `AAAA-MM-DD | projeto | aprendizado | evidência (PR/commit) | skill de origem`.
 
-_(vazio: o primeiro aprendizado validado entra aqui)_
+2026-11-23 | TPKLOG | **Prazo em toda chamada de rede em UMA peça**: um embrulho do fetch dá prazo padrão a toda chamada ao próprio servidor que chega sem prazo (90 s), e a emissão/envio fiscal ganha prazo MAIOR que o timeout da function (140 s > 120 s) — o cliente nunca desiste antes do servidor, senão o documento sai e o app não sabe. No backend, `AbortSignal.timeout` em cada fetch externo (WhatsApp, IA, mídia, SOAP). Um teste varre o backend e reprova qualquer fetch sem prazo. | TPKLOG v3620 (commit 57d09d9e, publicado 23/11) | tpklog-performance
 
 ## Ciclo de atualização (obrigatório)
 
