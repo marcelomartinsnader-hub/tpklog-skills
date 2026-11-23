@@ -41,6 +41,9 @@ O agente precisa saber **por onde começar** sem ler o projeto inteiro.
 - **Teto de 350 linhas por arquivo** como referência (regra `max-lines` ou equivalente). Meça quantos arquivos passam; regra nova em código legado entra como **warn com contagem e plano de redução**; sem violações, entra como **error**.
 - Se for TypeScript: avaliar `no-floating-promises` e `no-misused-promises` (promessa esquecida é bug clássico em integração com SEFAZ, gateways e filas).
 - Depois de medir, **quebrar arquivos gigantes por responsabilidade real**, em lotes de 3, preservando API pública, tratamento de erro e testes. Cada lote fecha com lint + tipos + testes verdes.
+- **Por que o teto importa (reel @matheusgomes, 2026-11-23):** arquivo que cresce a cada prompt chega a milhares de linhas, estoura o contexto do agente e faz a IA alucinar. O teto mantém cada arquivo legível de uma vez só.
+- **Ordem do autor, em 3 passos, um de cada vez (esperar terminar antes do próximo):** (1) setup do projeto, (2) instalar os portões de qualidade com o teto de linhas, (3) quebrar os arquivos grandes. A quebra **não é mecânica** ("quebra burra"): separar por módulo, responsabilidade, regra de negócio, classe e função.
+- **Trava no commit/push (opcional, só com aprovação):** o autor deixa o lint impedir commit e push de arquivo acima do teto, e a própria IA refatora quando bate na trava. No TPKLOG, isso só entra depois que o código legado estiver dentro do teto (senão trava todo mundo) e com o ok do usuário (regra 4). Alternativa mais leve: a mesma checagem no CI, só para arquivos alterados no PR.
 - Um comando único de verificação (`verify`/`check`) que junta lint, tipos, testes e build, sem publicar nada nem rodar migration.
 - Stack sem JavaScript usa a ferramenta nativa (não instalar ESLint só para cumprir checklist).
 
@@ -80,6 +83,10 @@ O agente precisa saber **por onde começar** sem ler o projeto inteiro.
 ## Fase 8: Avaliar o próprio harness
 
 Depois de mudar instruções, memória ou skills, testar com tarefas descartáveis (em cópia, nunca no projeto real): uma correção de fronteira, um handoff desatualizado, uma revisão que deve ser somente leitura. Anotar passou/falhou/não rodou e o que foi **observado**, não o que o agente disse que fez.
+
+## Fluxo do dia a dia: /autopilot
+
+Para que todo pedido de desenvolvimento rode este método sempre igual (brainstorm, plano, TDD, ciclos de review, PR, merge e limpeza), use a skill `tpklog-autopilot`, que cria o comando `/autopilot` no repositório TPKLOG.
 
 ## Saída esperada
 
