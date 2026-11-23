@@ -3,3 +3,4 @@
 ## 2026-11-23
 - Criado o repositório com `tpklog-performance` (v2), `tpklog-ux-motion` e `tpklog-kit-ia`.
 - Criada a skill mestra `tpklog-padrao-base`, que consolida as três e recebe os aprendizados validados.
+- Nova skill `tpklog-harness-ia` (método do vibe-coding-toolkit de @matheusgomes) e `tpklog-kit-ia` com os candidatos extras do toolkit (Context7, RTK, Ponytail, Caveman, Graphify, agent-browser).

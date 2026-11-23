@@ -66,6 +66,21 @@ Crie uma branch `chore/kit-ia-piloto`. Para cada item aprovado:
 - Remova da branch o que não passou no piloto.
 - Entregue ao usuário um resumo curto: o que foi avaliado, o que ficou, o que saiu e por quê. Abra PR em vez de fazer merge direto.
 
+## Candidatos extras do vibe-coding-toolkit (@matheusgomes, 2026-11-23)
+
+O toolkit `soumatheusgomes/vibe-coding-toolkit` usa, além do `superpowers` (já listado acima), estas ferramentas. Avaliar com as mesmas Fases 1 a 4, **uma por vez**:
+
+| Ferramenta | O que faz | Para que serviria no TPKLOG |
+|---|---|---|
+| Context7 (MCP) | Consulta documentação atual da biblioteca na versão usada | Evitar APIs antigas/inventadas. Verificar se as consultas saem com trechos de código privado |
+| RTK | Proxy que encurta a saída repetitiva de comandos para gastar menos contexto | Sessões longas (testes, builds). Checar se não esconde erro: deve permitir ver a saída original |
+| Ponytail (modo `full`) | Força a menor mudança completa, reaproveitando o que existe | Evitar PRs inchados. Pode conflitar com o CLAUDE.md atual |
+| Caveman | Respostas curtas na conversa; código e commits com texto normal | Preferência pessoal, ganho pequeno |
+| Graphify | Gera um grafo consultável do código | Útil se o TPKLOG for grande ou monorepo. Excluir `.env`, certificados, dependências e arquivos gerados; não enviar o grafo para fora |
+| agent-browser / Chrome DevTools MCP | A IA abre a tela, vê console, rede e performance | Validar telas do painel e do motorista localmente (casa com `tpklog-performance`) |
+
+O método de trabalho do toolkit (instruções, revisão multiagente, ondas, memória, segurança) está na skill `tpklog-harness-ia` e **não depende** de instalar nenhuma destas.
+
 ## Descartados do reel (não avaliar sem pedido do usuário)
 
 - `togg53192-cmd/jailbreaks`: textos para burlar travas de segurança de IAs. **Não usar**: risco ético, jurídico e de segurança, nada a ver com o TPKLOG.

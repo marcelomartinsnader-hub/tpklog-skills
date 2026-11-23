@@ -11,12 +11,13 @@ Cada skill fica em `skills/<nome>/SKILL.md` e pode ser copiada direto para `.cla
 | `tpklog-performance` | Auditoria de performance em 5 camadas (tela, rede, servidor, banco, infra) + observabilidade |
 | `tpklog-ux-motion` | Leis de UX e microinterações aplicadas às telas do TPKLOG |
 | `tpklog-kit-ia` | Avaliar e adotar com segurança ferramentas de IA de terceiros no fluxo de desenvolvimento |
+| `tpklog-harness-ia` | Ambiente de trabalho do Claude Code: AGENTS/CLAUDE enxutos, documentação com dono, portões de qualidade, revisão multiagente, ondas paralelas, memória/handoff e revisão de segurança |
 
 ## Como instalar (no terminal, dentro do projeto TPKLOG)
 
 ```bash
 # primeira vez
-git clone https://github.com/<sua-conta>/tpklog-skills.git ../tpklog-skills
+git clone https://github.com/marcelomartinsnader-hub/tpklog-skills.git ../tpklog-skills
 # nas próximas vezes
 git -C ../tpklog-skills pull
 

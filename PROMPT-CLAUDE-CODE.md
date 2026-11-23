@@ -1,6 +1,5 @@
 # Prompts para o Claude Code
 
-Troque `<sua-conta>` pelo seu usuário do GitHub.
 
 ## A) Projeto existente (TPKLOG): puxar, avaliar e devolver o aprendizado
 
@@ -10,7 +9,7 @@ Cole no Claude Code, dentro da pasta do projeto TPKLOG:
 
 Quero instalar e avaliar as skills da nossa fábrica de skills neste projeto.
 
-1. Se a pasta ../tpklog-skills não existir, rode `git clone https://github.com/<sua-conta>/tpklog-skills.git ../tpklog-skills`. Se existir, rode `git -C ../tpklog-skills pull`.
+1. Se a pasta ../tpklog-skills não existir, rode `git clone https://github.com/marcelomartinsnader-hub/tpklog-skills.git ../tpklog-skills`. Se existir, rode `git -C ../tpklog-skills pull`.
 2. Copie cada pasta de ../tpklog-skills/skills/ para .claude/skills/ deste projeto (crie a pasta se faltar). Se já houver uma versão instalada, mostre o que mudou antes de sobrescrever.
 3. Comece pela skill tpklog-padrao-base (modo "projeto existente") e depois pelas skills temáticas. Para cada recomendação, confira contra o código real e classifique como:
    - JÁ FEITO (cite arquivo e linha que comprovam),
@@ -34,7 +33,7 @@ Cole no Claude Code, dentro da pasta vazia do projeto novo:
 
 Vamos começar um projeto novo no padrão Transportech.
 
-1. Rode `git clone https://github.com/<sua-conta>/tpklog-skills.git ../tpklog-skills` (ou `git -C ../tpklog-skills pull` se já existir) e copie ../tpklog-skills/skills/* para .claude/skills/.
+1. Rode `git clone https://github.com/marcelomartinsnader-hub/tpklog-skills.git ../tpklog-skills` (ou `git -C ../tpklog-skills pull` se já existir) e copie ../tpklog-skills/skills/* para .claude/skills/.
 2. Siga a skill tpklog-padrao-base no modo "projeto novo": me faça as perguntas iniciais, proponha a estrutura com o padrão mínimo adaptado à stack e espere meu ok antes de criar os arquivos.
 3. No fim, me diga o que já nasceu no padrão e o que ficou pendente, e registre no tpklog-skills qualquer aprendizado novo, seguindo o ciclo de atualização da skill.
 
