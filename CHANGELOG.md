@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-25 (post @laeltecnologia DgDtJi-AK0c)
+- Nova skill `tpklog-baixa-whatsapp`: baixa de canhoto por foto no WhatsApp como canal extra ao app, usando a mesma função de baixa. Cascata de identificação configurável por cliente (QR próprio do TPKLOG, código de barras da chave, OCR, pontuação por contexto, escolha do motorista, fila no painel), fase 1 sem auto-aprovar, trilha de auditoria e travas de custo do Google.
+
 ## 2026-11-25 (reels de dashboard: @_code_and_chill_ DejdH-cvBKB, @code.xr DfcQ2TrTbGV e DgC6ruhT2NZ)
 - Nova skill `tpklog-ui-visual`: padrão visual dos painéis web do gestor (tokens CSS, grid bento, KPIs, quadro de cargas por etapa, modal de detalhe, selo de status em documento, sidebar com badges). Vidro fosco e degradê pastel ficam fora das telas operacionais e do app do motorista. Começa por uma tela piloto.
 
