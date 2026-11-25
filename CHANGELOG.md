@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-25 (reels de dashboard: @_code_and_chill_ DejdH-cvBKB, @code.xr DfcQ2TrTbGV e DgC6ruhT2NZ)
+- Nova skill `tpklog-ui-visual`: padrão visual dos painéis web do gestor (tokens CSS, grid bento, KPIs, quadro de cargas por etapa, modal de detalhe, selo de status em documento, sidebar com badges). Vidro fosco e degradê pastel ficam fora das telas operacionais e do app do motorista. Começa por uma tela piloto.
+
 ## 2026-11-23 (aprendizado validado no TPKLOG · v3620)
 - `tpklog-padrao-base`: 1º aprendizado validado — prazo em toda chamada de rede em uma peça só (front) + prazo por fetch no backend, com o prazo do cliente sempre maior que o do servidor nas operações fiscais; teste que varre o backend. Item 1 da avaliação de 23/11, aprovado pelo dono e publicado.
 - Avaliação completa das skills contra o TPKLOG real (arquivo:linha, 4 classificações) feita no projeto; as skills instaladas lá foram adaptadas à stack (JS puro + Firebase).
