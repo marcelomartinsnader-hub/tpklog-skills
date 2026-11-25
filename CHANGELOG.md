@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-25 (reel @code.xr DfeTS2Jzcgx, "Glassy Dashboard V24")
+- `tpklog-ui-visual`: novos itens 10 (cabeçalho "o que precisa de você hoje" com pendências clicáveis), 11 (ações rápidas com contador) e 12 (card do dia: anel de entregas concluídas + agenda de coletas/entregas); item 7 ganha seletor de período. Vidro fosco e fundo pêssego do reel continuam fora (itens 8 e 9).
+
 ## 2026-11-25 (post @laeltecnologia DgDtJi-AK0c)
 - Nova skill `tpklog-baixa-whatsapp`: baixa de canhoto por foto no WhatsApp como canal extra ao app, usando a mesma função de baixa. Cascata de identificação configurável por cliente (QR próprio do TPKLOG, código de barras da chave, OCR, pontuação por contexto, escolha do motorista, fila no painel), fase 1 sem auto-aprovar, trilha de auditoria e travas de custo do Google.
 
