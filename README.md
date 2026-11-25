@@ -12,6 +12,7 @@ Cada skill fica em `skills/<nome>/SKILL.md` e pode ser copiada direto para `.cla
 | `tpklog-ux-motion` | Leis de UX e microinterações aplicadas às telas do TPKLOG |
 | `tpklog-kit-ia` | Avaliar e adotar com segurança ferramentas de IA de terceiros no fluxo de desenvolvimento |
 | `tpklog-harness-ia` | Ambiente de trabalho do Claude Code: AGENTS/CLAUDE enxutos, documentação com dono, portões de qualidade, revisão multiagente, ondas paralelas, memória/handoff e revisão de segurança |
+| `tpklog-ui-visual` | Padrão visual dos painéis web (tokens, grid bento, KPIs, quadro de cargas por etapa, sidebar com badges, documento com selo de status); o que não adotar no app do motorista |
 | `tpklog-autopilot` | Cria o comando `/autopilot`: todo pedido roda o mesmo fluxo de 10 etapas (brainstorm, plano, TDD, ciclos de review, PR, merge, limpeza) |
 
 ## Como instalar (no terminal, dentro do projeto TPKLOG)
