@@ -7,6 +7,17 @@ description: Roteirizador automático do TPKLOG com IA. Use ao planejar, constru
 
 Objetivo do dono: apertar um botão, dar diretrizes do dia (texto ou áudio) e receber os carros montados como **rascunho**. O operador ajusta e aprova; o sistema aprende com os ajustes.
 
+## Visão do dono: o app é o segundo cérebro do operador
+
+Não é um botão que devolve resposta e não adivinha. É uma conversa contínua em que o sistema:
+- **é proativo**: sugere sem ser pedido ("Muriaé tem só 8 NFs hoje, quer segurar até quarta?", "este carro passa da jornada, divido em 2?");
+- **explica com dados do app** (médias por cidade, pernoites, rendimento das duplas, histórico, Maps) e cita a fonte de cada número;
+- **debate alternativas e aceita contra-argumento**: refaz e mostra o custo da troca;
+- **pergunta quando há dúvida**, nunca chuta;
+- entrega carros como rascunho; o operador decide.
+
+Interface: painel de conversa ao lado do rascunho dos carros (chat + quadro, como os líderes recomendam), com sugestões proativas que aparecem como cartões aceitar/recusar/discutir.
+
 ## Princípios (não negociáveis)
 
 1. **A IA interpreta, o código monta.** O Claude só transforma a fala em regras estruturadas. Quem distribui NFs nos carros é um montador determinístico (mesma entrada → mesmo resultado), testável sem IA.
