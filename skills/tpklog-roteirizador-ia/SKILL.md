@@ -45,7 +45,8 @@ Interface: painel de conversa ao lado do rascunho dos carros (chat + quadro, com
 
 - Objetivo: otimizar os carros (menos carros, bem cheios, dentro da jornada). A IA auxilia; o operador decide.
 - **Mesmo dia:** utilitários (Fiorino, Partner, Montana, Saveiro, Kangoo, Doblo etc.) e todo carro com rota em Juiz de Fora saem e terminam no mesmo dia. Tempo da rota = direção pelo Google Maps + tempo de parada por loja, dentro da jornada.
-- **Pernoite:** no interior, vans e caminhões (Van, HR, 3/4, Truck) podem ter rota de mais de um dia; o montador divide em dias, cada um dentro da jornada, e mostra o ponto de pernoite.
+- **Utilitário (até 650 kg) nunca pernoita** (regra dura) e tem **preferência por raio de até 100 km da base** (regra leve), para dar tempo de chegar na primeira cidade e concluir a rota. Fora do raio, o segundo cérebro avisa e pede confirmação. O raio-X achou 11 rotas de utilitário com pernoite desde 01/08: a conferência deve listá-las.
+- **Pernoite:** no interior, vans e caminhões (Van, HR, 3/4, Truck) podem ter rota de mais de um dia e são a **preferência** para as rotas longas que exigem pernoite (o montador oferece essas rotas primeiro a eles); o montador divide em dias, cada um dentro da jornada, e mostra o ponto de pernoite.
 - **Números reais do app em vez de estimativa:** média de entregas por dia em cada cidade (limite de lojas por carro/cidade/dia), carros que mais pernoitam (base para decidir pernoite e qual carro mandar) e rendimento de ajudante × motorista (sugere a dupla; operador troca se quiser).
 - Jornada (horário de saída, horas por dia, máximo de noites) vem do app se existir; senão é parâmetro configurado pelo dono.
 
@@ -117,11 +118,23 @@ Testes obrigatórios: casos com os 5 exemplos acima; loja não dividida; nunca p
 
 ## Tentativas antigas (começar do zero)
 
-O app tem duas tentativas que ignoram tipo de carro, tipo de carga e região do carro: "Roteirização estilo planilha" (Simular roteirização automática, Preferências aprendidas, mapa, até 10% acima da capacidade) e "Roteirizar automático — carros disponíveis hoje". O dono decidiu **não aproveitar** e tirar as duas do app.
+O app tem duas tentativas: "Roteirização estilo planilha" (Simular roteirização automática, Preferências aprendidas, mapa, até 10% acima da capacidade; ignora tipo de carga/região e lê kg do nome do modelo) e "Roteirizar automático — carros disponíveis hoje" (no quadro; já respeitava tipo de carga, categoria, região, fornecedor e corredor, segundo o raio-X de 28/11). O dono decidiu **não aproveitar** e tirar as duas do app.
 - Antes de remover: listar arquivos, funções, coleções do Firestore, menus/botões e dependências de cada uma, e o que vai embora.
 - Proposta (decisão do dono): remover só telas e lógica; **manter os dados de cadastro** (PERFIL do carro, capacidade, vínculo carro-motorista). Preferências aprendidas antigas: apagar ou arquivar, conforme o dono decidir.
 - Remoção vai pelo canal de teste; produção só com ok do dono.
-- Não reaproveitar código delas no roteirizador novo.
+- Não reaproveitar a lógica de SUGESTÃO delas. Peças de uso geral que moram perto e outras telas usam ficam (renomeadas se preciso): régua do tipo de carga pela NF/produto, régua de região/categoria, geocodificação e ordem de paradas do Maps, vehicleCapacityKg.
+- Rota fixa por cliente: ideia dos concorrentes, mas o TPKLOG ainda não tem; fica para depois.
+
+## Vocação do carro (frota terceirizada, muda muito)
+
+Não há rota fixa, mas há carros **destinados ao mesmo tipo de trabalho**. Ex.: Emerson (GKR-5015) carrega preferencialmente Danone em mercados de JF; as lojas mudam porque o fornecedor não tem constância. Modelar em duas camadas do PERFIL:
+- **Permitido (regra dura):** categorias (`perfilCategorias`: só `mercado_jf` → não viaja e não faz varejo JF), tipo de carga, fornecedores permitidos. O montador nunca viola.
+- **Preferência (regra leve):** fornecedor preferencial (ex.: Danone), que o montador atende primeiro com esse carro e só usa para outro fornecedor quando sobrar espaço. O segundo cérebro avisa quando quebra a preferência ("Danone veio pouco hoje; completo o Emerson com mercados da Vigor?").
+- **Regiões preferenciais em ordem, com plano B** (regra leve): ex.: Sebastião (RVB-7I28) → 1º região de Ervália; se lá não tiver carga, tiver pouco peso, ou houver prioridade em outro lugar → 2º Barbacena. O montador tenta a 1ª, cai para a 2ª pelos gatilhos (sem carga, peso abaixo do mínimo configurado, prioridade) e o segundo cérebro diz o motivo ("Ervália tem só 180 kg hoje; mando o Sebastião para Barbacena?").
+- As vocações também podem nascer do histórico (onde cada carro mais rodou) como sugestão para o operador aprovar.
+- **Meta do dono: sair do muito flexível para mais constância.** Indicador semanal de constância: % dos dias em que cada carro rodou na sua vocação (região/fornecedor 1ª opção, 2ª opção, fora). O segundo cérebro aponta quem está fugindo da vocação e sugere ajustar a vocação ou a montagem. Constância cresce aos poucos; nada vira fixo sem o dono aprovar.
+- **Sai hoje ou segura?** Volume nem sempre basta para manter a rota no dia. Por região: mínimo para sair (peso e/ou nº de lojas) e máximo de dias que uma NF pode esperar. O segundo cérebro mostra o que está pendente, há quantos dias, e quanto costuma chegar para lá (histórico), e sugere: sair hoje, segurar até o dia X, ou juntar com a região vizinha do mesmo corredor. NF perto do limite de espera fura a regra e sai. O operador decide.
+- Nunca deduzir lojas fixas desse carro. A vocação é tipo de trabalho, não endereço.
 
 ## Fases
 
