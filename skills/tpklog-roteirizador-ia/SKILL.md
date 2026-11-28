@@ -117,11 +117,12 @@ Testes obrigatórios: casos com os 5 exemplos acima; loja não dividida; nunca p
 
 ## Tentativas antigas (começar do zero)
 
-O app tem duas tentativas que ignoram tipo de carro, tipo de carga e região do carro: "Roteirização estilo planilha" (Simular roteirização automática, Preferências aprendidas, mapa, até 10% acima da capacidade) e "Roteirizar automático — carros disponíveis hoje". O dono decidiu **não aproveitar** e tirar as duas do app.
+O app tem duas tentativas: "Roteirização estilo planilha" (Simular roteirização automática, Preferências aprendidas, mapa, até 10% acima da capacidade; ignora tipo de carga/região e lê kg do nome do modelo) e "Roteirizar automático — carros disponíveis hoje" (no quadro; já respeitava tipo de carga, categoria, região, fornecedor e corredor, segundo o raio-X de 28/11). O dono decidiu **não aproveitar** e tirar as duas do app.
 - Antes de remover: listar arquivos, funções, coleções do Firestore, menus/botões e dependências de cada uma, e o que vai embora.
 - Proposta (decisão do dono): remover só telas e lógica; **manter os dados de cadastro** (PERFIL do carro, capacidade, vínculo carro-motorista). Preferências aprendidas antigas: apagar ou arquivar, conforme o dono decidir.
 - Remoção vai pelo canal de teste; produção só com ok do dono.
-- Não reaproveitar código delas no roteirizador novo.
+- Não reaproveitar a lógica de SUGESTÃO delas. Peças de uso geral que moram perto e outras telas usam ficam (renomeadas se preciso): régua do tipo de carga pela NF/produto, régua de região/categoria, geocodificação e ordem de paradas do Maps, vehicleCapacityKg.
+- Rota fixa por cliente: ideia dos concorrentes, mas o TPKLOG ainda não tem; fica para depois.
 
 ## Fases
 
