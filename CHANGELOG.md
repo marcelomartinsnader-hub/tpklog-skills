@@ -1,6 +1,7 @@
 # Changelog
 
-## 2026-11-28 (roteirizador: começar do zero)
+## 2026-11-28 (roteirizador: começar do zero, pesquisa e regras do dono)
+- `tpklog-roteirizador-ia`: o app é a fonte da verdade (cadastro de carros, tabela de rotas, corredor); inventário do que já existe (inclui Google Maps); conferência de alinhamento (fase 1a); conversa de esclarecimento informal → regras; regras fixas de jornada (utilitário e JF no mesmo dia, pernoite para van/caminhão no interior); ideias da pesquisa de roteirizadores líderes.
 - `tpklog-roteirizador-ia`: nova fase 0b para tirar do app as duas tentativas antigas de roteirização automática (inventário antes, canal de teste, produção só com ok do dono), mantendo os dados de cadastro do PERFIL do carro; registro de que o app já tem perfil por carro e das divergências de capacidade.
 
 ## 2026-11-28 (pedido do dono: roteirizador automático)
