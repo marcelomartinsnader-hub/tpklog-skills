@@ -24,6 +24,7 @@ Objetivo do dono: apertar um botão, dar diretrizes do dia (texto ou áudio) e r
 - Fornecedores misturados no mesmo carro (DECMINAS, DVL, DANONE, BABY, VIGOR, ITA, SERRANA). Tipo de baú combina com a carga.
 - Frota: tipo (Fiorino, Partner, Van, 3/4, Truck), baú (seca/resfriada/congelada), kg (550 a 8000). Escala: ESCALADO/LIVRE.
 - Status que indicam erro de roteirização: NÃO COUBE, NÃO COUBE / ROTEIRIZADA, PASSOU PRA OUTRO CARRO EM ROTA, NÃO CARREGOU, ESQUECEU MERCADORIA ROTEIRIZADA, PERNOITE.
+- O app já tem PERFIL por carro (placa, capacidade, motorista, categorias atendidas: Mercados JF / Varejo JF / Varejo interior / Mercados interior / todas; carga seca/refrig/congel; fornecedores). É a base de frota do roteirizador novo, mas as capacidades divergem entre telas e planilha (ex.: DAJ-8391 com 2.300, 3.500 e 2.500 kg): conferir antes de usar. "Carro DAJ" na fala = placa DAJ-8391.
 - Problemas de dado a resolver no cadastro: nomes de motorista com grafias diferentes, CONGELADA/CONGELADO, cidades com caixa/acento variados, motoristas sem carro cadastrado.
 
 ## Modelo de regras (saída do intérprete)
@@ -71,9 +72,17 @@ Testes obrigatórios: casos com os 5 exemplos acima; loja não dividida; nunca p
 - Microfone no sistema (reconhecimento do navegador ou serviço de transcrição) e áudio no bot do WhatsApp (mesmo canal da `tpklog-baixa-whatsapp`).
 - O texto transcrito aparece para conferir antes de virar regra.
 
+## Tentativas antigas (começar do zero)
+
+O app tem duas tentativas que ignoram tipo de carro, tipo de carga e região do carro: "Roteirização estilo planilha" (Simular roteirização automática, Preferências aprendidas, mapa, até 10% acima da capacidade) e "Roteirizar automático — carros disponíveis hoje". O dono decidiu **não aproveitar** e tirar as duas do app.
+- Antes de remover: listar arquivos, funções, coleções do Firestore, menus/botões e dependências de cada uma, e o que vai embora.
+- Proposta (decisão do dono): remover só telas e lógica; **manter os dados de cadastro** (PERFIL do carro, capacidade, vínculo carro-motorista). Preferências aprendidas antigas: apagar ou arquivar, conforme o dono decidir.
+- Remoção vai pelo canal de teste; produção só com ok do dono.
+- Não reaproveitar código delas no roteirizador novo.
+
 ## Fases
 
-0. Raio-X do código (só leitura). 1. Cadastros com ID único + registro de montagens e ajustes. 2. Botão "Sugerir carros" com diretrizes por formulário (sem IA). 3. Diretrizes por texto livre (Claude preenche o formulário). 4. Voz. 5. Aprendizado com aprovação. 6. Ordem de entrega dentro do carro (precisa geocodificar clientes).
+0. Raio-X do código (só leitura). 0b. Remover as duas tentativas antigas (inventário primeiro, canal de teste, ok do dono). 1. Cadastros com ID único + registro de montagens e ajustes. 2. Botão "Sugerir carros" com diretrizes por formulário (sem IA). 3. Diretrizes por texto livre (Claude preenche o formulário). 4. Voz. 5. Aprendizado com aprovação. 6. Ordem de entrega dentro do carro (precisa geocodificar clientes).
 
 Cada fase entra na fila do PLANO-SKILLS.md e só começa com aprovação do dono.
 

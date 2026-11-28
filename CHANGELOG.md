@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-28 (roteirizador: começar do zero)
+- `tpklog-roteirizador-ia`: nova fase 0b para tirar do app as duas tentativas antigas de roteirização automática (inventário antes, canal de teste, produção só com ok do dono), mantendo os dados de cadastro do PERFIL do carro; registro de que o app já tem perfil por carro e das divergências de capacidade.
+
 ## 2026-11-28 (pedido do dono: roteirizador automático)
 - Nova skill `tpklog-roteirizador-ia`: a IA interpreta as diretrizes do dia (texto ou áudio) em regras estruturadas que o operador confirma; um montador determinístico usa as tabelas de rotas e corredores, frota e escala para montar os carros como rascunho; o operador aprova; ajustes viram sugestões de regra. Base: estudo da planilha de roteirização atual. Fases 0 a 6.
 
