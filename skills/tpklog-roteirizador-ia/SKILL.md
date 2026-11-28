@@ -132,6 +132,7 @@ Não há rota fixa, mas há carros **destinados ao mesmo tipo de trabalho**. Ex.
 - **Regiões preferenciais em ordem, com plano B** (regra leve): ex.: Sebastião (RVB-7I28) → 1º região de Ervália; se lá não tiver carga, tiver pouco peso, ou houver prioridade em outro lugar → 2º Barbacena. O montador tenta a 1ª, cai para a 2ª pelos gatilhos (sem carga, peso abaixo do mínimo configurado, prioridade) e o segundo cérebro diz o motivo ("Ervália tem só 180 kg hoje; mando o Sebastião para Barbacena?").
 - As vocações também podem nascer do histórico (onde cada carro mais rodou) como sugestão para o operador aprovar.
 - **Meta do dono: sair do muito flexível para mais constância.** Indicador semanal de constância: % dos dias em que cada carro rodou na sua vocação (região/fornecedor 1ª opção, 2ª opção, fora). O segundo cérebro aponta quem está fugindo da vocação e sugere ajustar a vocação ou a montagem. Constância cresce aos poucos; nada vira fixo sem o dono aprovar.
+- **Sai hoje ou segura?** Volume nem sempre basta para manter a rota no dia. Por região: mínimo para sair (peso e/ou nº de lojas) e máximo de dias que uma NF pode esperar. O segundo cérebro mostra o que está pendente, há quantos dias, e quanto costuma chegar para lá (histórico), e sugere: sair hoje, segurar até o dia X, ou juntar com a região vizinha do mesmo corredor. NF perto do limite de espera fura a regra e sai. O operador decide.
 - Nunca deduzir lojas fixas desse carro. A vocação é tipo de trabalho, não endereço.
 
 ## Fases

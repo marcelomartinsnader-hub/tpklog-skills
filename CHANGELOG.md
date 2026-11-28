@@ -1,7 +1,7 @@
 # Changelog
 
 ## 2026-11-28 (raio-X do roteirizador)
-- `tpklog-roteirizador-ia`: corrigido o texto das tentativas antigas (a do quadro já respeitava carga e região) e o "não reaproveitar" vale só para a lógica de sugestão; rota fixa adiada; nova seção "vocação do carro" (permitido = regra dura, fornecedor preferencial e regiões preferenciais em ordem com plano B = regra leve); indicador de constância por carro.
+- `tpklog-roteirizador-ia`: corrigido o texto das tentativas antigas (a do quadro já respeitava carga e região) e o "não reaproveitar" vale só para a lógica de sugestão; rota fixa adiada; nova seção "vocação do carro" (permitido = regra dura, fornecedor preferencial e regiões preferenciais em ordem com plano B = regra leve); indicador de constância por carro; decisão "sai hoje ou segura" por região.
 
 ## 2026-11-28 (roteirizador: começar do zero, pesquisa e regras do dono)
 - `tpklog-roteirizador-ia`: visão "segundo cérebro" (proativo, explica com dados, debate com o operador); o app é a fonte da verdade (cadastro de carros, tabela de rotas, corredor); inventário do que já existe (inclui Google Maps); conferência de alinhamento (fase 1a); conversa de esclarecimento informal → regras; regras fixas de jornada (utilitário e JF no mesmo dia, pernoite para van/caminhão no interior); médias reais do app (entregas por cidade, pernoite, rendimento ajudante × motorista); ideias da pesquisa de roteirizadores líderes.
