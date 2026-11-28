@@ -35,6 +35,7 @@ Objetivo do dono: apertar um botão, dar diretrizes do dia (texto ou áudio) e r
 - Objetivo: otimizar os carros (menos carros, bem cheios, dentro da jornada). A IA auxilia; o operador decide.
 - **Mesmo dia:** utilitários (Fiorino, Partner, Montana, Saveiro, Kangoo, Doblo etc.) e todo carro com rota em Juiz de Fora saem e terminam no mesmo dia. Tempo da rota = direção pelo Google Maps + tempo de parada por loja, dentro da jornada.
 - **Pernoite:** no interior, vans e caminhões (Van, HR, 3/4, Truck) podem ter rota de mais de um dia; o montador divide em dias, cada um dentro da jornada, e mostra o ponto de pernoite.
+- **Números reais do app em vez de estimativa:** média de entregas por dia em cada cidade (limite de lojas por carro/cidade/dia), carros que mais pernoitam (base para decidir pernoite e qual carro mandar) e rendimento de ajudante × motorista (sugere a dupla; operador troca se quiser).
 - Jornada (horário de saída, horas por dia, máximo de noites) vem do app se existir; senão é parâmetro configurado pelo dono.
 
 ## Conversa de esclarecimento (peça 0)
@@ -85,7 +86,8 @@ Cada diretriz vira um item com `tipo` fixo. Tipos mínimos:
 7. Encher cada carro seguindo a ordem do corredor até bater: kg (com folga configurável), jornada (tempo do Maps + parada; mesmo dia para utilitário e JF, pernoite permitido para van/caminhão no interior), `limite_lojas`, compatibilidade de baú × tipo de carga do fornecedor, área permitida do motorista.
 8. `fornecedor_ancora`: toda loja da âncora no carro puxa as NFs de outros fornecedores da mesma loja, se o baú permitir.
 9. Sobras → "sem carro" com motivo.
-10. Gravar rascunho com, por carro: peso total, % da capacidade, nº de lojas e o motivo de cada escolha.
+10. Sugerir o ajudante de cada carro pelo histórico de rendimento com aquele motorista (sugestão, não regra).
+11. Gravar rascunho com, por carro: peso total, % da capacidade, nº de lojas e o motivo de cada escolha.
 
 Testes obrigatórios: casos com os 5 exemplos acima; loja não dividida; nunca passar da capacidade; NF nunca perdida (entrada = carros + sem carro + segurada).
 
