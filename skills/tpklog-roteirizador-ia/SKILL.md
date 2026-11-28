@@ -129,6 +129,8 @@ O app tem duas tentativas: "Roteirização estilo planilha" (Simular roteirizaç
 Não há rota fixa, mas há carros **destinados ao mesmo tipo de trabalho**. Ex.: Emerson (GKR-5015) carrega preferencialmente Danone em mercados de JF; as lojas mudam porque o fornecedor não tem constância. Modelar em duas camadas do PERFIL:
 - **Permitido (regra dura):** categorias (`perfilCategorias`: só `mercado_jf` → não viaja e não faz varejo JF), tipo de carga, fornecedores permitidos. O montador nunca viola.
 - **Preferência (regra leve):** fornecedor preferencial (ex.: Danone), que o montador atende primeiro com esse carro e só usa para outro fornecedor quando sobrar espaço. O segundo cérebro avisa quando quebra a preferência ("Danone veio pouco hoje; completo o Emerson com mercados da Vigor?").
+- **Regiões preferenciais em ordem, com plano B** (regra leve): ex.: Sebastião (RVB-7I28) → 1º região de Ervália; se lá não tiver carga, tiver pouco peso, ou houver prioridade em outro lugar → 2º Barbacena. O montador tenta a 1ª, cai para a 2ª pelos gatilhos (sem carga, peso abaixo do mínimo configurado, prioridade) e o segundo cérebro diz o motivo ("Ervália tem só 180 kg hoje; mando o Sebastião para Barbacena?").
+- As vocações também podem nascer do histórico (onde cada carro mais rodou) como sugestão para o operador aprovar.
 - Nunca deduzir lojas fixas desse carro. A vocação é tipo de trabalho, não endereço.
 
 ## Fases
