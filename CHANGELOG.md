@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-28 (pedido do dono: roteirizador automático)
+- Nova skill `tpklog-roteirizador-ia`: a IA interpreta as diretrizes do dia (texto ou áudio) em regras estruturadas que o operador confirma; um montador determinístico usa as tabelas de rotas e corredores, frota e escala para montar os carros como rascunho; o operador aprova; ajustes viram sugestões de regra. Base: estudo da planilha de roteirização atual. Fases 0 a 6.
+
 ## 2026-11-25 (reel @code.xr DfeTS2Jzcgx, "Glassy Dashboard V24")
 - `tpklog-ui-visual`: novos itens 10 (cabeçalho "o que precisa de você hoje" com pendências clicáveis), 11 (ações rápidas com contador) e 12 (card do dia: anel de entregas concluídas + agenda de coletas/entregas); item 7 ganha seletor de período. Vidro fosco e fundo pêssego do reel continuam fora (itens 8 e 9).
 

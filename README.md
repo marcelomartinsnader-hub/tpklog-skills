@@ -15,6 +15,7 @@ Cada skill fica em `skills/<nome>/SKILL.md` e pode ser copiada direto para `.cla
 | `tpklog-ui-visual` | Padrão visual dos painéis web (tokens, grid bento, KPIs, quadro de cargas por etapa, sidebar com badges, documento com selo de status); o que não adotar no app do motorista |
 | `tpklog-baixa-whatsapp` | Baixa de canhoto por foto no WhatsApp: cascata de identificação (QR próprio, código de barras, OCR, contexto, escolha do motorista), confirmação, conferência, auditoria e travas de custo |
 | `tpklog-autopilot` | Cria o comando `/autopilot`: todo pedido roda o mesmo fluxo de 10 etapas (brainstorm, plano, TDD, ciclos de review, PR, merge, limpeza) |
+| `tpklog-roteirizador-ia` | Roteirizador automático: diretrizes por texto/voz viram regras (Claude), montador determinístico com rotas e corredores, rascunho no quadro, aprendizado com os ajustes do operador |
 
 ## Como instalar (no terminal, dentro do projeto TPKLOG)
 
