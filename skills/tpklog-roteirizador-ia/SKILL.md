@@ -45,6 +45,7 @@ Interface: painel de conversa ao lado do rascunho dos carros (chat + quadro, com
 
 - Objetivo: otimizar os carros (menos carros, bem cheios, dentro da jornada). A IA auxilia; o operador decide.
 - **Mesmo dia:** utilitários (Fiorino, Partner, Montana, Saveiro, Kangoo, Doblo etc.) e todo carro com rota em Juiz de Fora saem e terminam no mesmo dia. Tempo da rota = direção pelo Google Maps + tempo de parada por loja, dentro da jornada.
+- **Utilitário (até 650 kg) nunca pernoita** (regra dura) e tem **preferência por raio de até 100 km da base** (regra leve), para dar tempo de chegar na primeira cidade e concluir a rota. Fora do raio, o segundo cérebro avisa e pede confirmação. O raio-X achou 11 rotas de utilitário com pernoite desde 01/08: a conferência deve listá-las.
 - **Pernoite:** no interior, vans e caminhões (Van, HR, 3/4, Truck) podem ter rota de mais de um dia; o montador divide em dias, cada um dentro da jornada, e mostra o ponto de pernoite.
 - **Números reais do app em vez de estimativa:** média de entregas por dia em cada cidade (limite de lojas por carro/cidade/dia), carros que mais pernoitam (base para decidir pernoite e qual carro mandar) e rendimento de ajudante × motorista (sugere a dupla; operador troca se quiser).
 - Jornada (horário de saída, horas por dia, máximo de noites) vem do app se existir; senão é parâmetro configurado pelo dono.
