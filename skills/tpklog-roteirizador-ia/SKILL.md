@@ -124,6 +124,13 @@ O app tem duas tentativas: "Roteirização estilo planilha" (Simular roteirizaç
 - Não reaproveitar a lógica de SUGESTÃO delas. Peças de uso geral que moram perto e outras telas usam ficam (renomeadas se preciso): régua do tipo de carga pela NF/produto, régua de região/categoria, geocodificação e ordem de paradas do Maps, vehicleCapacityKg.
 - Rota fixa por cliente: ideia dos concorrentes, mas o TPKLOG ainda não tem; fica para depois.
 
+## Vocação do carro (frota terceirizada, muda muito)
+
+Não há rota fixa, mas há carros **destinados ao mesmo tipo de trabalho**. Ex.: Emerson (GKR-5015) carrega preferencialmente Danone em mercados de JF; as lojas mudam porque o fornecedor não tem constância. Modelar em duas camadas do PERFIL:
+- **Permitido (regra dura):** categorias (`perfilCategorias`: só `mercado_jf` → não viaja e não faz varejo JF), tipo de carga, fornecedores permitidos. O montador nunca viola.
+- **Preferência (regra leve):** fornecedor preferencial (ex.: Danone), que o montador atende primeiro com esse carro e só usa para outro fornecedor quando sobrar espaço. O segundo cérebro avisa quando quebra a preferência ("Danone veio pouco hoje; completo o Emerson com mercados da Vigor?").
+- Nunca deduzir lojas fixas desse carro. A vocação é tipo de trabalho, não endereço.
+
 ## Fases
 
 0. Raio-X do código + inventário do que o app já tem (só leitura). 0b. Remover as duas tentativas antigas (inventário primeiro, canal de teste, ok do dono). 1a. Conferência de alinhamento (carros × rotas × corredores × NFs). 1. Cadastros com ID único + registro de montagens e ajustes. 2. Botão "Sugerir carros" com diretrizes por formulário (sem IA). 3. Diretrizes por texto livre (Claude preenche o formulário). 4. Voz. 5. Aprendizado com aprovação. 6. Ordem de entrega dentro do carro (precisa geocodificar clientes).
